@@ -8,7 +8,7 @@ int possible(vector<int> arr, int k, int m, int day){
 		}
 		else{
 			noOfDays += (count / k);
-			count  = 0;
+			count  = 0;m
 		}
 	}
 	noOfDays += (count/k);
