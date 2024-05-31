@@ -21,8 +21,28 @@ void Inorder(TreeNode* root, vector<int> &v){
 
 public:
     vector<int> inorderTraversal(TreeNode* root) {
+        // // Recursion
+        // vector<int> inorder;
+        // Inorder(root, inorder);
+        // return inorder;
+
+        // Iterative
+        stack<TreeNode*> st;
+        TreeNode* node = root;
         vector<int> inorder;
-        Inorder(root, inorder);
+        while(true){
+            if(node != NULL){
+                st.push(node);
+                node = node -> left;
+            }
+            else{
+                if(st.empty() == true) break;
+                node = st.top();
+                st.pop();
+                inorder.push_back(node->val);
+                node = node -> right;
+            }
+        }
         return inorder;
     }
 };
