@@ -10,9 +10,11 @@
  * right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    TreeNode* insertIntoBST(TreeNode* root, int val) {
+    TreeNode *insertIntoBST(TreeNode *root, int val)
+    {
         // // Recursion
         // if(root == NULL) return new TreeNode(val);
         // if(val>=root->val){
@@ -25,23 +27,28 @@ public:
         // Iterative
         if (root == NULL)
             return new TreeNode(val);
-        TreeNode* curr = root;
-        while (true) {
-            if (val >= curr->val) {
+        TreeNode *curr = root;
+        while (true)
+        {
+            if (val >= curr->val)
+            {
                 if (curr->right != NULL)
                     curr = curr->right;
-                else {
+                else
+                {
                     curr->right = new TreeNode(val);
                     break;
                 }
-            } else {
-                if (val <= curr->val) {
-                    if (curr->left != NULL)
-                        curr = curr->left;
-                    else {
-                        curr->left = new TreeNode(val);
-                        break;
-                    }
+            }
+            else
+            {
+
+                if (curr->left != NULL)
+                    curr = curr->left;
+                else
+                {
+                    curr->left = new TreeNode(val);
+                    break;
                 }
             }
         }
