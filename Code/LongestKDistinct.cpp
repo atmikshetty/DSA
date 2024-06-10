@@ -15,5 +15,22 @@ class Solution{
                 }
             }
             return maxLen;
+
+
+            // Optimal
+            int maxLen = 0, left=0, right=0;
+            map<char,int> mpp;
+            while(right<s.size()){
+                mpp[s[right]]++;
+                if(mpp.size()<=k){
+                    maxLen = max(maxLen, right-left+1);
+                }else{
+                    mpp[s[left]]--; 
+                    if(mpp[s[left]] == 0) mpp.remove(mpp[s[left]]);
+                    left++;
+                }
+                right++;
+            }
+            return maxLen;
         }
 }
