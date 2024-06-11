@@ -4,7 +4,10 @@
         "iostream": "cpp",
         "*.tcc": "cpp",
         "list": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

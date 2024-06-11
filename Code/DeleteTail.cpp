@@ -31,5 +31,7 @@ Node * deleteTail(Node *head) {
     while(temp->next->next != NULL){
         temp = temp -> next;
     }
+    delete temp->next;  // free the memory
+    temp->next = nullptr;
     return head;
 }
