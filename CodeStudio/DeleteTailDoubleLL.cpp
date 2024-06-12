@@ -38,11 +38,12 @@ Node * deleteTail(Node *head) {
     while(prev->next !=NULL){
         prev = prev->next;
     }
-    tail = prev->prev;
+    Node* tail = prev->prev;
     tail->next = nullptr;
     prev->prev = nullptr;
 
     delete prev;
     return head;
 }
+
 
